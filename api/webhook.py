@@ -27,11 +27,12 @@ def handler():
         else:
             # Запрос к нейросети через шлюз AITUNNEL
             completion = ai_client.chat.completions.create(
-                model="gpt-4o",  # Можно заменить на gpt-4o-mini или другую модель из каталога AITUNNEL
+                model="gpt-4o",  
                 messages=[
                     {"role": "system", "content": "Ты полезный голосовой ассистент Алисы. Отвечай кратко, емко, без сложных спецсимволов."},
                     {"role": "user", "content": user_message}
-                ]
+                ],
+                timeout=3.5  # <-- Защита от долгого ответа AITUNNEL
             )
             
             # Безопасный разбор ответа с учетом индексов списков
