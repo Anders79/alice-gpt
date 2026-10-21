@@ -23,7 +23,7 @@ def handler():
 
         # Если это самый первый запуск навыка (пустая команда), приветствуем пользователя
         if not user_message:
-            reply_text = "Привет! Я твой ИИ-ассистент на Vercel через AITUNNEL. О чем поговорим?"
+            reply_text = "Привет! Я твой персональный ассистент"
         else:
             # Запрос к нейросети через шлюз AITUNNEL
             completion = ai_client.chat.completions.create(
