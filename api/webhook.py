@@ -27,7 +27,7 @@ def handler():
         else:
             # Запрос к нейросети через шлюз AITUNNEL
             completion = ai_client.chat.completions.create(
-                model="gemini-1.5-flash",  
+                model="gemini-2.5-flash",  
                 messages=[
                     {"role": "system", "content": "Ты полезный голосовой ассистент Алисы. Отвечай кратко, емко, без сложных спецсимволов."},
                     {"role": "user", "content": user_message}
